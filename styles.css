@@ -1,0 +1,77 @@
+body {
+    background-color:#92A4E1;
+}
+#header {
+    border-bottom:solid;
+    border-width:5px;
+    border-color:#606262;
+    
+    margin-top:-16px;
+    padding-top:18px;
+    padding-bottom:10px;
+    background-color:pink;
+    color:#579E95;
+    font-size:45px;
+    text-align:center;
+    font-family: 'Russo One', sans-serif;
+    text-shadow: 2px 3px #305651, 2px 3px #305651, 2px 6px 6px white;
+    margin-bottom:50px;
+}
+
+#user {
+    font-family: 'Russo One', sans-serif;
+    border-width:5px;  
+    border-style:groove;
+    height:250px;
+    text-align:center;
+    font-size:1em;
+}
+#user img {
+    width:100px;
+    margin:auto;
+}
+#userPick {
+    border-style:solid;
+    border-width:5px;
+    border-color:#606262;
+    
+    padding-left:23%;
+    font-family: 'Russo One', sans-serif;
+    margin-top:20px;
+    width:100%;
+    background-color: pink;
+}
+#userPick img {
+    margin:auto;
+    width:20%;
+    margin:10px;
+}
+ #userPick img:hover {
+     cursor:pointer;
+ }
+ 
+#text{
+        margin-top:40px;
+    width:100%;
+    text-align:center;
+    font-family: 'Russo One', sans-serif;
+}
+#text p {
+    font-size:20px;
+    border-style:groove;
+}
+#text h2 {
+    font-size:30px;
+}
+
+#computerPick {
+    font-size:1em;
+    font-family: 'Russo One', sans-serif;
+    border-width:5px;  
+    border-style:groove;
+    text-align:center;
+    height:250px;
+}
+#computerPick img {
+    height:100px;
+}
