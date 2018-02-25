@@ -1,9 +1,9 @@
 app.controller('homeController', ['$scope', function($scope) {
+/*history route that keeps track of the game points*/
 
     $scope.optionChosen= function(option){
         $scope.itemChosen.name= option.name;
         $scope.itemChosen.imgUrl=option.imgUrl;
-        
         $scope.computerPick = $scope.computerOptions[Math.floor(Math.random()*$scope.computerOptions.length)];
         
         if ($scope.itemChosen.name==$scope.computerPick.name){
@@ -16,7 +16,7 @@ app.controller('homeController', ['$scope', function($scope) {
         
         else if($scope.computerPick.name=="rock"&& $scope.itemChosen.name=="scissors"||$scope.computerPick.name=="scissors"&& $scope.itemChosen.name=="paper"||$scope.computerPick.name=="paper"&&$scope.itemChosen.name=="rock"){
             $scope.scores.computer++;     
-            $scope.scores.status="Nyahaha You Lost"
+            $scope.scores.status="You Lose!"
         }
     };
     
@@ -43,7 +43,6 @@ app.controller('homeController', ['$scope', function($scope) {
         }
         ]
         
-        
         $scope.computerOptions =[
         {
             name: "rock",
@@ -59,5 +58,4 @@ app.controller('homeController', ['$scope', function($scope) {
             imgUrl:"img/scissors.png"
         }
         ]
-
 }]);
