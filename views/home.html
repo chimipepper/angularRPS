@@ -1,21 +1,24 @@
 <div id="home" class="container">
   <div class="row">
     <div id="user" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-        <h1>You</h1>
-        <img src={{itemChosen.imgUrl}} ng-if="itemChosen.imgUrl">
-        <h2>Score: {{scores.user}}</h2>
+      <h1>You</h1>
+      <img src={{itemChosen.imgUrl}} ng-if="itemChosen.imgUrl">
+      <h2>Score: {{scores.user}}</h2>
     </div>
     <div id="computerPick" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-        <h1>Computer</h1>
-        <img src={{computerPick.imgUrl}} ng-if="itemChosen.imgUrl">
-        <h2>Score: {{scores.computer}}</h2>
+      <h1>Computer</h1>
+      <img src={{computerPick.imgUrl}} ng-if="itemChosen.imgUrl">
+      <h2>Score: {{scores.computer}}</h2>
     </div>
   </div>
   <div id="text">
     <h2>{{scores.status}}</h2>
-     <p>Choose your weapon!</p>
+    <p>Choose your weapon!</p>
   </div>
-      <div id="userPick">
-      <img ng-repeat="option in userOptions" src={{option.imgUrl}} ng-click="optionChosen(option)">
-    </div>
+  <div id="userPick">
+    <img ng-repeat="option in userOptions" src={{option.imgUrl}} ng-click="optionChosen(option)">
+  </div>
+  <div id="historyButton">
+    <button type="button"><a ui-sref="history">History</a></button>
+  </div>
 </div>

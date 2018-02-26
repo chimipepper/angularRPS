@@ -1,0 +1,19 @@
+<div id="history" class="container">
+    <div class="row">
+        <h1>Game History</h1>
+        <div id="userHistory" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+            <h1>Your Pick:</h1>
+            <br>
+            <ul>
+                <li ng-repeat="lastPick in historyList"><img src={{lastPick.imgUrl}}></li>
+            </ul>
+        </div>
+        <div id="computerHistory" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+            <h1>Computer's Pick</h1>
+            <br>
+            <ul>
+                <li ng-repeat="lastComputerPick in computerHistory"><img src={{lastComputerPick.imgUrl}}></li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,10 +1,22 @@
-app.controller('homeController', ['$scope', function($scope) {
+app.controller('homeController', ['$scope','optionService', function($scope, optionService) {
 /*history route that keeps track of the game points*/
-
+    $scope.itemChosen=optionService.itemChosen;  
+    // $scope.computerPick=optionService.computerPick;
+    $scope.historyList= optionService.historyList;
+    $scope.computerHistory=optionService.computerHistory;
+    
     $scope.optionChosen= function(option){
         $scope.itemChosen.name= option.name;
         $scope.itemChosen.imgUrl=option.imgUrl;
-        $scope.computerPick = $scope.computerOptions[Math.floor(Math.random()*$scope.computerOptions.length)];
+        $scope.computerPick = optionService.computerOptions[Math.floor(Math.random()*optionService.computerOptions.length)];
+        
+        $scope.itemCopy= angular.copy($scope.itemChosen)
+        $scope.historyList.push($scope.itemCopy);
+        console.log($scope.historyList);
+        
+        $scope.computerItemCopy= angular.copy($scope.computerPick)
+        $scope.computerHistory.push($scope.computerItemCopy);
+        console.log($scope.computerHistory);
         
         if ($scope.itemChosen.name==$scope.computerPick.name){
             $scope.scores.status="We're All Winners"
@@ -20,42 +32,7 @@ app.controller('homeController', ['$scope', function($scope) {
         }
     };
     
-    $scope.scores={
-        user:0,
-        computer:0,
-        status:""
-    };
-    
-    $scope.itemChosen={};
-    $scope.userOptions =[
-        {
-            name: "rock",
-            imgUrl:"img/rock.png"
-        },
-        {
-            name:"paper",           
-            imgUrl:"img/paper.png"
-            
-        },
-        {
-            name:"scissors",
-            imgUrl:"img/scissors.png"
-        }
-        ]
-        
-        $scope.computerOptions =[
-        {
-            name: "rock",
-            imgUrl:"img/rock.png"
-        },
-        {
-            name:"paper",           
-            imgUrl:"img/paper.png"
-            
-        },
-        {
-            name:"scissors",
-            imgUrl:"img/scissors.png"
-        }
-        ]
+    $scope.scores=optionService.scores;
+    $scope.userOptions = optionService.userOptions;
+    $scope.computerOptions= optionService.computerOptions;
 }]);
